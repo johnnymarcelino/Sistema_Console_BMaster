@@ -5,28 +5,54 @@ using System.Text;
 using System.Threading.Tasks;
 using Teste_BMaster_Jr.Entities;
 
+
 namespace Teste_BMaster_Jr.Entities
 {
     internal class DataTransfer : ClientsData
     {
-        public ClientsData OriginPIXKey { get; set; }
+        public int OriginPIXKey { get; set; }
         public double Value { get; set; }
-        public ClientsData DestinationPIXKey { get; set; }
+        public int DestinationPIXKey { get; set; }
 
         public DataTransfer()
         {
         }
 
-        public DataTransfer(string name, int document, int pixKey, ClientsData originPIXKey, double value, ClientsData destinationPIXKey) : base(name, document, pixKey)
+        public DataTransfer(string name, int document, int pixKey, double balance, int originPIXKey, double value, int destinationPIXKey) : base(name, document, pixKey, balance)
         {
             OriginPIXKey = originPIXKey;
             Value = value;
             DestinationPIXKey = destinationPIXKey;
         }
 
-        public string PIXTransfer(string pixTransfer)
+        //public void PIXTransfer(int originPIXKey, int destinationPIXKey)
+        //////public void PIXTransfer()
+        //{
+        //    DataTransfer dataTransfer = new DataTransfer();
+        //    foreach (ClientsData client in Register)
+        //    {
+        //        //Console.WriteLine(client);
+        //        //Console.WriteLine(ToString());
+        //        //Console.WriteLine("Now down");
+        //        //Console.WriteLine();
+        //        //client.ToString();
+        //        if (client.PIXKey == originPIXKey)
+        //        {
+        //            Console.Write($"This client has a balance of $ {client.Balance}. How much would you like to transfer: ");
+        //            double value = double.Parse(Console.ReadLine());
+        //            dataTransfer = new DataTransfer(Name, Document, PIXKey, Balance, originPIXKey, value, destinationPIXKey);
+        //            Console.WriteLine(ToString());
+        //        }
+        //    }
+        //    //    //Console.WriteLine(ToString());
+        //    //    //return Value;
+
+        //}
+
+        public override string ToString()
         {
-            return pixTransfer;
+            return "Transfer completed!!\r\nOrigin PIX key: " + OriginPIXKey + "\r\nValue of the transfer: $ "
+                + Value + "\r\nDestination PIX key: " + DestinationPIXKey;
         }
     }
 }
