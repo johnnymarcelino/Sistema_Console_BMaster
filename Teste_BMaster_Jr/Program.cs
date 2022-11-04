@@ -1,6 +1,6 @@
 ﻿using System;
 using Teste_BMaster_Jr.Entities;
-
+using Teste_BMaster_Jr.Entities.Exceptions;
 
 namespace Teste_BMaster_Jr
 {
@@ -17,9 +17,10 @@ namespace Teste_BMaster_Jr
 
             ClientsData clients2 = new ClientsData();
             int count = 0;
-            while (true)
+            try
             {
-                try {
+                while (true)
+                {
                     if (count == 0)
                     {
                         Console.Write("How many clients would you like to register ? ");
@@ -51,16 +52,19 @@ namespace Teste_BMaster_Jr
                         int destinationPIXKey = int.Parse(Console.ReadLine());
                         clients2.PIXTransfer(originPIXKey, destinationPIXKey);
                     }
-                    else
+                    else if (regiTransQuit == 'q')
                     {
                         Console.WriteLine("You wish to quit of the system");
                         break;
                     }
                 }
-                catch (Exception e)
-                {
-                    Console.WriteLine("This is a message error: " + e.Message);
-                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine();
+                Console.WriteLine("This is a message error: " + e.Message);
+                Console.WriteLine("You have entered with the incorrect option.");
+                Console.WriteLine("The system will be closed.");
             }
         }
     }

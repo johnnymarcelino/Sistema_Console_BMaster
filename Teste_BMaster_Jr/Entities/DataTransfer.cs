@@ -25,29 +25,6 @@ namespace Teste_BMaster_Jr.Entities
             DestinationPIXKey = destinationPIXKey;
         }
 
-        //public void PIXTransfer(int originPIXKey, int destinationPIXKey)
-        //////public void PIXTransfer()
-        //{
-        //    DataTransfer dataTransfer = new DataTransfer();
-        //    foreach (ClientsData client in Register)
-        //    {
-        //        //Console.WriteLine(client);
-        //        //Console.WriteLine(ToString());
-        //        //Console.WriteLine("Now down");
-        //        //Console.WriteLine();
-        //        //client.ToString();
-        //        if (client.PIXKey == originPIXKey)
-        //        {
-        //            Console.Write($"This client has a balance of $ {client.Balance}. How much would you like to transfer: ");
-        //            double value = double.Parse(Console.ReadLine());
-        //            dataTransfer = new DataTransfer(Name, Document, PIXKey, Balance, originPIXKey, value, destinationPIXKey);
-        //            Console.WriteLine(ToString());
-        //        }
-        //    }
-        //    //    //Console.WriteLine(ToString());
-        //    //    //return Value;
-
-        //}
 
         public override string ToString()
         {
